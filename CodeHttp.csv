@@ -1,0 +1,80 @@
+Information,100,Continue,Attente de la suite de la requête.
+Information,101,Switching Protocols,Acceptation du changement de protocole.
+Information,102,Processing,WebDAV : Traitement en cours (évite que le client dépasse le temps d’attente limite).
+Succès,200,OK,Requête traitée avec succès.
+Succès,201,Created,Requête traitée avec succès et création d’un document.
+Succès,202,Accepted,"Requête traitée, mais sans garantie de résultat."
+Succès,203,Non-Authoritative Information,"Information retournée, mais générée par une source non certifiée."
+Succès,204,No Content,Requête traitée avec succès mais pas d’information à renvoyer.
+Succès,205,Reset Content,"Requête traitée avec succès, la page courante peut être effacée."
+Succès,206,Partial Content,Une partie seulement de la ressource a été transmise.
+Succès,207,Multi-Status,WebDAV : Réponse multiple.
+Succès,210,Content Different,WebDAV : La copie de la ressource côté client diffère de celle du serveur (contenu ou propriétés).
+Succès,226,IM Used,"RFC 32293 : Le serveur a accompli la requête pour la ressource, et la réponse est une représentation du résultat d'une ou plusieurs manipulations d'instances appliquées à l'instance actuelle."
+Redirection,300,Multiple Choices,L’URI demandée se rapporte à plusieurs ressources.
+Redirection,301,Moved Permanently,Document déplacé de façon permanente.
+Redirection,302,Moved Temporarily,Document déplacé de façon temporaire.
+Redirection,303,See Other,La réponse à cette requête est ailleurs.
+Redirection,304,Not Modified,Document non modifié depuis la dernière requête.
+Redirection,305,Use Proxy,La requête doit être ré-adressée au proxy.
+Redirection,306,(aucun),"Code utilisé par une ancienne version de la RFC 26164, à présent réservé."
+Redirection,307,Temporary Redirect,La requête doit être redirigée temporairement vers l’URI spécifiée.
+Redirection,308,Permanent Redirect,La requête doit être redirigée définitivement vers l’URI spécifiée.
+Redirection,310,Too many Redirects,"La requête doit être redirigée de trop nombreuses fois, ou est victime d’une boucle de redirection."
+Erreur du client web,400,Bad Request,La syntaxe de la requête est erronée.
+Erreur du client web,401,Unauthorized,Une authentification est nécessaire pour accéder à la ressource.
+Erreur du client web,402,Payment Required,Paiement requis pour accéder à la ressource.
+Erreur du client web,403,Forbidden,"Le serveur a compris la requête, mais refuse de l'exécuter. Contrairement à l'erreur 401, s'authentifier ne fera aucune différence. Sur les serveurs où l'authentification est requise, cela signifie généralement que l'authentification a été acceptée mais que les droits d'accès ne permettent pas au client d'accéder à la ressource."
+Erreur du client web,404,Not Found,Ressource non trouvée.
+Erreur du client web,405,Method Not Allowed,Méthode de requête non autorisée.
+Erreur du client web,406,Not Acceptable,"La ressource demandée n'est pas disponible dans un format qui respecterait les en-têtes ""Accept"" de la requête."
+Erreur du client web,407,Proxy Authentication Required,Accès à la ressource autorisé par identification avec le proxy.
+Erreur du client web,408,Request Time-out,Temps d’attente d’une requête du client écoulé.
+Erreur du client web,409,Conflict,La requête ne peut être traitée en l’état actuel.
+Erreur du client web,410,Gone,La ressource n'est plus disponible et aucune adresse de redirection n’est connue.
+Erreur du client web,411,Length Required,La longueur de la requête n’a pas été précisée.
+Erreur du client web,412,Precondition Failed,Préconditions envoyées par la requête non vérifiées.
+Erreur du client web,413,Request Entity Too Large,Traitement abandonné dû à une requête trop importante.
+Erreur du client web,414,Request-URI Too Long,URI trop longue.
+Erreur du client web,415,Unsupported Media Type,Format de requête non supporté pour une méthode et une ressource données.
+Erreur du client web,416,Requested range unsatisfiable,Champs d’en-tête de requête « range » incorrect.
+Erreur du client web,417,Expectation failed,Comportement attendu et défini dans l’en-tête de la requête insatisfaisable.
+Erreur du client web,418,I’m a teapot,"« Je suis une théière ». Ce code est défini dans la RFC 23245 datée du premier avril 1998, Hyper Text Coffee Pot Control Protocol."
+Erreur du client web,421,Bad mapping / Misdirected Request,"La requête a été envoyée à un serveur qui n'est pas capable de produire une réponse (par exemple, car une connexion a été réutilisée)."
+Erreur du client web,422,Unprocessable entity,WebDAV : L’entité fournie avec la requête est incompréhensible ou incomplète.
+Erreur du client web,423,Locked,WebDAV : L’opération ne peut avoir lieu car la ressource est verrouillée.
+Erreur du client web,424,Method failure,WebDAV : Une méthode de la transaction a échoué.
+Erreur du client web,425,Unordered Collection,"WebDAV RFC 36486. Ce code est défini dans le brouillon WebDAV Advanced Collections Protocol, mais est absent de Web Distributed Authoring and Versioning (WebDAV) Ordered Collections Protocol."
+Erreur du client web,426,Upgrade Required,"RFC 28177 Le client devrait changer de protocole, par exemple au profit de TLS/1.0."
+Erreur du client web,428,Precondition Required,RFC 65858 La requête doit être conditionnelle.
+Erreur du client web,429,Too Many Requests,RFC 65859 Le client a émis trop de requêtes dans un délai donné.
+Erreur du client web,431,Request Header Fields Too Large,RFC 658510 Les entêtes HTTP émises dépassent la taille maximale admise par le serveur.
+Erreur du client web,449,Retry With,Code défini par Microsoft. La requête devrait être renvoyée après avoir effectué une action.
+Erreur du client web,450,Blocked by Windows Parental Controls,Code défini par Microsoft. Cette erreur est produite lorsque les outils de contrôle parental de Windows sont activés et bloquent l’accès à la page.
+Erreur du client web,451,Unavailable For Legal Reasons,"Ce code d'erreur indique que la ressource demandée est inaccessible pour des raisons d'ordre légal11,12."
+Erreur du client web,456,Unrecoverable Error,WebDAV : Erreur irrécupérable.
+serveur Nginx,444,No Response,Indique que le serveur n'a retourné aucune information vers le client et a fermé la connexion.
+serveur Nginx,495,SSL Certificate Error,"Une extension de l'erreur 400 Bad Request, utilisée lorsque le client a fourni un certificat invalide."
+serveur Nginx,496,SSL Certificate Required,"Une extension de l'erreur 400 Bad Request, utilisée lorsqu'un certificat client requis n'est pas fourni."
+serveur Nginx,497,HTTP Request Sent to HTTPS Port,"Une extension de l'erreur 400 Bad Request, utilisée lorsque le client envoie une requête HTTP vers le port 443 normalement destiné aux requêtes HTTPS."
+serveur Nginx,499,Client Closed Request,Le client a fermé la connexion avant de recevoir la réponse. Cette erreur se produit quand le traitement est trop long côté serveur13.
+Erreur du serveur d'application,500,Internal Server Error,Erreur interne du serveur.
+Erreur du serveur d'application,501,Not Implemented,Fonctionnalité réclamée non supportée par le serveur.
+Erreur du serveur d'application,502,Bad Gateway ou Proxy Error,Mauvaise réponse envoyée à un serveur intermédiaire par un autre serveur.
+Erreur du serveur d'application,503,Service Unavailable,Service temporairement indisponible ou en maintenance.
+Erreur du serveur d'application,504,Gateway Time-out,Temps d’attente d’une réponse d’un serveur à un serveur intermédiaire écoulé.
+Erreur du serveur d'application,505,HTTP Version not supported,Version HTTP non gérée par le serveur.
+Erreur du serveur d'application,506,Variant Also Negotiates,RFC 229514 : Erreur de négociation. Transparent content negociation.
+Erreur du serveur d'application,507,Insufficient storage,WebDAV : Espace insuffisant pour modifier les propriétés ou construire la collection.
+Erreur du serveur d'application,508,Loop detected,WebDAV : Boucle dans une mise en relation de ressources (RFC 584215).
+Erreur du serveur d'application,509,Bandwidth Limit Exceeded,Utilisé par de nombreux serveurs pour indiquer un dépassement de quota.
+Erreur du serveur d'application,510,Not extended,RFC 277416 : la requête ne respecte pas la politique d'accès aux ressources HTTP étendues.
+Erreur du serveur d'application,511,Network authentication required,RFC 658517 : Le client doit s'authentifier pour accéder au réseau. Utilisé par les portails captifs pour rediriger les clients vers la page d'authentification.
+Cloudflare,520,Unknown Error,L'erreur 520 est utilisé en tant que réponse générique lorsque le serveur d'origine retourne un résultat imprévu.
+Cloudflare,521,Web Server Is Down,Le serveur a refusé la connexion depuis Cloudflare.
+Cloudflare,522,Connection Timed Out,Cloudflare n'a pas pu négocier un TCP handshake avec le serveur d'origine.
+Cloudflare,523,Origin Is Unreachable,Cloudflare n'a pas réussi à joindre le serveur d'origine. Cela peut se produire en cas d'échec de résolution de nom de serveur DNS.
+Cloudflare,524,A Timeout Occurred,Cloudflare a établi une connection TCP avec le serveur d'origine mais n'a pas reçu de réponse HTTP avant l'expiration du délai de connexion.
+Cloudflare,525,SSL Handshake Failed,Cloudflare n'a pas pu négocier un SSL/TLS handshake avec le serveur d'origine.
+Cloudflare,526,Invalid SSL Certificate,Cloudflare n'a pas pu valider le certificat SSL présenté par le serveur d'origine.
+Cloudflare,527,Railgun Error,L'erreur 527 indique que la requête a dépassé le délai de connexion ou a échoué après que la connexion WAN ait été établie.
