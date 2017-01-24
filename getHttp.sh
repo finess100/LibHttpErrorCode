@@ -4,55 +4,39 @@ checkCode=$(cat "${in_src}" | grep "$1" | cut -d',' -f2)
 type=$(cat "$in_src" | grep "$checkCode" | cut -d',' -f1)
 message=$(cat "$in_src" | grep "$checkCode" | cut -d',' -f3)
 detail=$(cat "$in_src" | grep "$checkCode" | cut -d',' -f4)
-help=(
-echo "†=========================================================†"
-echo "commandes -t type -d detail -h help"
-echo "exemple for external use -> getHttp yourHttpCode Param(s)"
-echo "example for internal use ->"
-echo "†=========================================================†"
-)
-case "$#" in
-	0) echo "Erreur aucun parametre "
-	;;
-	1)
-		if [ -z "$checkCode" ]
-			then
-				echo "Erreur - Code Http non trouve"
-			else
-				if [ "$1" == "-h" ]
-					then  
-						echo "$help"
-				fi
-		fi
-	;;
-	2)
-		if [[ $2 == "-t" ]]
-			then
-				echo "$type"
-		fi
-		if [[ $2 == "-m" ]]
-			then
-				echo "$message"
-		fi
-		if [[ $2 == "-d" ]]
-			then
-				echo "$detail"
-		fi
-	;;
-	3)
-				if [[ $3 == "-t" ]]
-			then
-				echo "$type"
-		fi
-		if [[ $3 == "-m" ]]
-			then
-				echo "$message"
-		fi
-		if [[ $3 == "-d" ]]
-			then
-				echo "$detail"
-		fi
-	;;
-	*) echo "Erreur - trop de parametres"
-	;;
-esac
+for param in "$@"
+do
+	if [ -z "$checkCode" ]
+		then
+			echo "Erreur - Code Http non trouve"
+			exit 1
+	fi
+	if [ -z "$param" ]
+		then
+			echo "Erreur - Aucun parametre trouve"
+			exit 1
+	fi
+	if [ "$param" == "-t" ]
+		then
+			if [ -z "$resultat" ]
+				then resultat="$type"
+				else resultat="$resultat | $type"
+			fi
+	fi
+	if [ "$param" == "-m" ]
+		then
+			if [ -z "$resultat" ]
+				then resultat="$message"
+				else resultat="$resultat | $message"
+			fi
+	fi
+	if [ "$param" == "-d" ]
+		then
+			if [ -z "$resultat" ]
+				then resultat="$detail"
+				else resultat="$resultat | $detail"
+			fi
+	fi
+done
+#Rendu du résultat du code entré
+echo "$resultat"
